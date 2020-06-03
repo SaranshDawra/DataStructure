@@ -10,6 +10,8 @@ public class graphClient {
 		graph.add(3, 4, true);
 		
 		graph.print();
+		graph.bft(4);
+		graph.bft();
 
 	}
 
