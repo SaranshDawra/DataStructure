@@ -51,6 +51,29 @@ class Graph <T>{
 			}
 		}
 	}
+
+	public void dft() {
+		T src = (T) map.keySet().toArray()[0];
+		HashSet<T> set = new HashSet<>();
+		dft(src, set);
+	}
+
+	public void dft(T src) {
+		HashSet<T> set = new HashSet<>();
+		dft(src, set);
+	}
+
+	private void dft(T src, HashSet<T> set) {
+		set.add(src);
+		System.out.print(src + "  ");
+
+		LinkedList<T> lst = map.get(src);
+		for (int i = 0; i < lst.size(); i++) {
+			if (!set.contains(lst.get(i))) {
+				dft(lst.get(i), set);
+			}
+		}
+	}
 	
 	public void print() {
 //		for(T key: map.keySet()) {
